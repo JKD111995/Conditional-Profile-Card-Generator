@@ -29,12 +29,16 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
-  // reset the website body with the new html output
-  window.variables.name = "Lucy";
-  window.variables.lastname = "Bowman";
-  window.variables.role = "Web Developer";
-  window.variables.city = "Miami";
-  window.variables.country = "USA";
+  variables.name == null
+    ? (variables.name = "Your name here")
+    : console.log("hi");
+  variables.lastname == null ? (variables.lastname = "") : console.log("hi");
+  variables.role == null ? (variables.role = "Role") : console.log("hi");
+  variables.city == null ? (variables.city = "City") : console.log("hi");
+  variables.country == null
+    ? (variables.country = "Country")
+    : console.log("hi");
+
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
